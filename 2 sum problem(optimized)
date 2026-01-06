@@ -1,0 +1,11 @@
+nums = list(map(int, input("Enter numbers: ").split()))
+target = int(input("Enter target: "))
+
+seen = {}
+
+for i in range(len(nums)):
+    rem = target - nums[i]
+    if rem in seen:
+        print("Indices:", seen[rem], i)
+        break
+    seen[nums[i]] = i
